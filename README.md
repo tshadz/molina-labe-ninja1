@@ -1,68 +1,125 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center" id="top">:rocket: == Projeto semana 8 - Labeninja ==</h1>
 
-## Available Scripts
+:::::::::::::: Inserir Banner ::::::::::::::
 
-In the project directory, you can run:
+<p align="center">
+  <a href="#sobre">Sobre</a> &#xa0; | &#xa0; 
+  <a href="#funciona">O que funciona</a> &#xa0; | &#xa0;
+  <a href="#nao-funciona">O que não funciona</a> &#xa0; | &#xa0;
+  <a href="#pendente">Pendências</a> &#xa0; | &#xa0;
+  <a href="#requisitos">Pré requisitos</a> &#xa0; | &#xa0;
+  <a href="#observacoes">Observações</a> &#xa0; | &#xa0;
+  <a href="#desenvolvedores">Desenvolvedores</a>
+</p>
 
-### `npm start`
+<h2 id="sobre">:notebook: Sobre </h2>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<p align="center">:rocket: Projeto desenvolvido conforme proposta do bootcamp ministrado pela Labenu, para o desenvolvimento de um web site de prestação de serviços baseado em React </p>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<h2 id="tecnologias"> 🛠 Tecnologias </h2>
 
-### `npm test`
+As seguintes ferramentas foram usadas na construção do projeto:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* React
+* API
+* Styled-components
+* Metodologias Ágeis
+* Scrum
+* Kanban estruturado no Trello
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h2 id="funciona">:heavy_check_mark: O que funciona</h2>
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* Adicionar itens que funcionam
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<h2 id="nao-funciona">:x: O que não funciona</h2>
 
-### `npm run eject`
+* Adicionar itens que não funcionam
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ 
+<h2 id="pendente">:construction: Em desenvolvimento</h2>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [ ] Adicionar funcionalidades que estão em desenvolvimento
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<h2 id="link">:link: Link Surge - link para visualização do site</h2>
+:::::::::::::: Inserir link surge ::::::::::::::
 
-## Learn More
+<h2 id="imagens">:computer: Imagens Desktop</h2>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Página inicial**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<h2>:iphone: Imagens Mobile</h2>
 
-### Code Splitting
+- **Página Inicial**<hr></hr>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
+<h2 id="requisitos">:leftwards_arrow_with_hook: Pré-requisitos</h2>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-### Making a Progressive Web App
+<h4>:checkered_flag: Rodando o projeto </h4>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+```bash
+# Clone este repositório
+$ git clone <https://github.com/future4code/molina-labe-ninja1>
 
-### Advanced Configuration
+# Acesse a pasta do projeto no terminal
+$ cd ./molina-labe-ninja1
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+# Instale as dependências
+$ npm install
 
-### Deployment
+# Para iniciar o projeto
+$ npm run start
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+# O servidor inciará na porta:3000 - acesse <http://localhost:3000>
+```
 
-### `npm run build` fails to minify
+<h2 id="observacoes">:pencil: Observações</h2>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Ícones utilizados para organização de commit's
+
+:checkered_flag: release
+:package: nova funcionalidade 
+:arrow_up: atualização 
+:beetle: correção de bug
+
+- Kanban atualizado (Backlog / To do / In progress / Done)
+::::::::: Inserir link trello ou print :::::::::
+
+<h2 id="desenvolvedores">:construction_worker: Desenvolvedores</h2>
+
+<table> 
+<tr>
+ 
+<td align="center"><a href="https://github.com/BrunoPogianMallta"><img style="border-radius: 50%" src="https://avatars.githubusercontent.com/u/74029775?v=4" width="100px" alt=""/>
+ <br />
+ <sub><b>Bruno Poggian</b></sub></a> <a href="https://github.com/BrunoPogianMallta">🚀</a></td>
+ 
+ 
+<td align="center"><a href="https://github.com/danilo-ac"><img style="border-radius: 50%" src="https://avatars.githubusercontent.com/u/83218983?v=4" width="100px" alt=""/>
+ <br />
+ <sub><b>Danilo Chagas</b></sub></a> <a href="https://github.com/danilo-ac">🚀</a></td>
+
+ <td align="center"><a href="https://github.com/bellacbs"><img style="border-radius: 50%" src="https://avatars.githubusercontent.com/u/35279793?v=4" width="100px" alt=""/>
+ <br />
+ <sub><b>Izabella Brandão</b></sub></a> <a href="https://github.com/bellacbs">🚀</a></td>
+
+ <td align="center"><a href="https://github.com/tshadz"><img style="border-radius: 50%" src="https://avatars.githubusercontent.com/u/80704054?v=4" width="100px" alt=""/>
+ <br />
+ <sub><b>Thaís Sombra</b></sub></a> <a href="https://github.com/tshadz">🚀</a></td>
+ 
+ <td align="center"><a href="https://github.com/VitoriaMochovik"><img style="border-radius: 50%" src="https://avatars.githubusercontent.com/u/82537066?v=4" width="100px" alt=""/>
+ <br />
+ <sub><b>Vitória Mochovik</b></sub></a> <a href="https://github.com/VitoriaMochovik">🚀</a></td>
+
+
+</tr>
+</table>
+
+👋🏽 Entre em contato!
+
+<a href="#top">Voltar para o topo</a>
