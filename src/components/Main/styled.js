@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    background-color: lightpink;
+    background-color: none;
     flex-grow: 1;
 `

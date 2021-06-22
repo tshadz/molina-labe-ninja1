@@ -10,7 +10,7 @@ export const Container = styled.div`
 `
 
 export const CardContainer = styled.div`
-    background-color: lightskyblue;
+    background-color: #EBEBF2;
     height:200px;
     width: 400px;
     margin:10px;

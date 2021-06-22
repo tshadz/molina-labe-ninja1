@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Button1 = styled.button`
-    background-color: white;
+    background-color: #EBEBF2;
     color: black;
     text-transform: uppercase;
     outline: none;
@@ -14,7 +14,7 @@ export const Button1 = styled.button`
     cursor: pointer;
 `
 
-const Input1 = styled.input`
+export const Input1 = styled.input`
     border:none;
     width:100%;
     padding-left: 0px;

@@ -7,7 +7,6 @@ export class Main extends Component {
     return (
         <div>
             <Container>
-              CORPINHO AQUI
               <Ninja />
             </Container>
         </div>

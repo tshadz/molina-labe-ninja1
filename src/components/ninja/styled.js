@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    background-color: lightgreen;
+    background-color: none;
     height: 90%;
     width: 90%;
     margin: auto;
@@ -9,4 +9,6 @@ export const Container = styled.div`
     text-align: center;
     align-content: center;
     flex-grow: 1;
+    display: flex;
+    flex-direction: row;
 `
