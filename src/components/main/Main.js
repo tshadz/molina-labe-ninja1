@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { Container } from './styled'
-import { Ninja } from '../ninja/Ninja'
+import { Contratante } from '../contratante/Contratante'
 
 export class Main extends Component {
   render() {
     return (
         <div>
             <Container>
-              <Ninja />
+              <Contratante />
             </Container>
         </div>
     )

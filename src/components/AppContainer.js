@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { Header } from './Header/Header'
-import { Footer } from './Footer/Footer'
-import { Main } from './Main/Main'
+import { Header } from './header/Header'
+import { Footer } from './footer/Footer'
+import { Main } from './main/Main'
 
 const Container = styled.div`
   display: flex;

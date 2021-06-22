@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 import { Container } from './styled'
-import { CardProdutos } from '../CardProdutos/CardProdutos'
+import { CardProdutos } from '../cardProdutos/CardProdutos'
 import  { Carrinho } from '../carrinho/Carrinho'
+import { Filtro } from '../filtro/Filtro'
 
 
-export class Ninja extends Component {
+export class Prestador extends Component {
   render() {
     return (
       <Container>
+        <Filtro />
         <CardProdutos />
-        <Carrinho />
       </Container>
     )
   }
