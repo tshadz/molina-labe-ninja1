@@ -3,6 +3,7 @@ import  Button  from '../diversos/Button'
 import {ItensCadastroAnuncio} from './styled'
 import { headers, baseUrl } from '../config/config'
 import axios from 'axios'
+// import Calendar from 'rc-calendar';
 
 export class CadastrarServico extends React.Component{
 
@@ -11,7 +12,14 @@ export class CadastrarServico extends React.Component{
         inputDescription:"",
         inputRemuneration:"",
         inputTime:"",
-        inputPayment: ["PayPal", "boleto"]
+        paymentsMethods:[
+            {value: "PayPall", isChecked: false},
+            {value: "Dinheiro", isChecked: false},
+            {value: "Pix", isChecked: false},
+            {value: "Boleto", isChecked: false},
+            {value: "Debito", isChecked: false},
+            {value: "Credito", isChecked: false}
+        ]
     }
 
     onChangeTitle = (event) => {
@@ -26,16 +34,31 @@ export class CadastrarServico extends React.Component{
         this.setState({inputRemuneration: event.target.value})
     }
 
+    formataData = (data) => {
+        const dia = data.split("/")[0]
+        const mes = data.split("/")[1]
+        const ano = data.split("/")[2]
+
+        return ano + "/" + mes + "/" + dia
+    }
+
     onChangeTime = (event) => {
-        this.setState({inputTime: event.target.value})
+        const newTime = this.formataData(event.target.value)
+        this.setState({inputTime: newTime})
     }
 
     onClickCreateJob = () => {
+        const paymentsMethods = this.state.paymentsMethods.filter((method) => {
+            return method.isChecked === true
+        }).map((method) => {
+            return method.value
+        })
+
         const body ={
             title: this.state.inputTitle,
             description: this.state.inputDescription,
             price: Number(this.state.inputRemuneration),
-            paymentMethods: this.state.inputPayment,
+            paymentMethods: paymentsMethods,
             dueDate: this.state.inputTime
         }
         axios.post(baseUrl+"jobs",body,headers)
@@ -46,16 +69,41 @@ export class CadastrarServico extends React.Component{
                 inputDescription:"",
                 inputRemuneration:"",
                 inputTime:"",
-                inputPayment: []
+                inputPayment: [],
+                paymentsMethods:[
+                    {value: "PayPall", isChecked: false},
+                    {value: "Dinheiro", isChecked: false},
+                    {value: "Pix", isChecked: false},
+                    {value: "Boleto", isChecked: false},
+                    {value: "Debito", isChecked: false},
+                    {value: "Credito", isChecked: false}
+                ]
             })
         })
         .catch((error) => {
             alert(error.response.data.message)
+            console.log(error.response.data)
         })
     }
 
+    onClickHandelChecks = (method,index) => {
+        let newPaymentsMethods = this.state.paymentsMethods
+        if(method.isChecked){
+            newPaymentsMethods[index].isChecked = false
+        }else{
+            newPaymentsMethods[index].isChecked = true
+        }
+        this.setState({paymentsMethods: newPaymentsMethods})
+    }
 
     render(){
+        console.log("pagamentos Selecionados", this.state.paymentsMethods)
+
+        const paymentsMethods = this.state.paymentsMethods.map((method,index) =>{
+            return <ul id={index}>
+                <input type="checkbox" onClick={() => this.onClickHandelChecks(method,index)}/>{method.value}
+            </ul>
+        })
         return(
             <div>
                 <h2>Anuncie Seu Trabalho Conosco</h2>
@@ -78,15 +126,15 @@ export class CadastrarServico extends React.Component{
                 </ItensCadastroAnuncio>
                 <ItensCadastroAnuncio>
                 <label>Serviço:</label>
-                    <input type="text" size="32" onChange={this.onChangeTitle} placeholder="Insira aqui um título para seu serviço"/>
+                    <input type="text" size="32" onChange={this.onChangeTitle} placeholder="Insira aqui um título para seu serviço."/>
                 </ItensCadastroAnuncio>
                 <ItensCadastroAnuncio>
                     <p>Descrição:</p>
-                    <textarea  onChange={this.onChangeDescription} placeholder="Insira aqui um breve resumo do serviço a ser prestado"/>
+                    <textarea  cols="35" rows="5" onChange={this.onChangeDescription} placeholder="Insira aqui um breve resumo do serviço a ser prestado."/>
                 </ItensCadastroAnuncio>
                 <ItensCadastroAnuncio>
                     <p>Valor de Remuneração:</p>
-                    <input type="number" size="32"  onChange={this.onChangeRemuneration} placeholder="R$ 500.00"/>
+                    <input type="number" size="32"  onChange={this.onChangeRemuneration} placeholder="Informe valor em real e apenas números. Ex: 500,00"/>
                 </ItensCadastroAnuncio>
                 <ItensCadastroAnuncio>
                     <p>Prazo</p>
@@ -94,21 +142,11 @@ export class CadastrarServico extends React.Component{
                 </ItensCadastroAnuncio>
                 <ItensCadastroAnuncio>
                     <p>Método Para pagamento</p>
-                    {/* <input type="checkbox" id="1" value="Boleto">Boleto</input>
-                    <label for="1"></label>
-                    <input type="checkbox" id="2" value="Boleto">Crédito</input>
-                    <label for="2"></label>
-                    <input type="checkbox" id="3" value="Boleto">Débito</input>
-                    <label for="3"></label>
-                    <input type="checkbox" id="4" value="Boleto">Pix</input>
-                    <label for="4"></label>
-                    <input type="checkbox" id="5" value="Dinheiro">Pix</input>
-                    <label for="5"></label> */}
+                    {paymentsMethods}
                 </ItensCadastroAnuncio>
                 <ItensCadastroAnuncio>
                     <Button text="Enviar" onClick={this.onClickCreateJob}/><Button onClick={this.props.goToProviderHome} text="Voltar"/>
                 </ItensCadastroAnuncio>
-
             </div>
         )
     }

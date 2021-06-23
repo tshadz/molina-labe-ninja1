@@ -48,7 +48,7 @@ export class ServicosCadastrados extends React.Component{
                     <p>{job.title}</p>
                     <p>{job.description}</p>
                     <p>R$ {job.price}</p>
-                    <p>{job.paymentMethods.map((payment) => payment)}</p>
+                    <p>{job.paymentMethods.map((payment) => `| ${payment} |`)}</p>
                     <p>{job.dueDate}</p>
                     <Button text="Apagar" onClick={() => this.onClickDeleteJob(job.id)}/>
                 </div>
