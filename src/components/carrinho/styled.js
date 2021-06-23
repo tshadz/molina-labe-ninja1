@@ -11,7 +11,7 @@ export const ContainerText = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    text-align: center;
+    text-align: start;
     align-content: center;
     padding: 5px 40px 5px 20px;
 `
