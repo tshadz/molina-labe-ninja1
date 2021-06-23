@@ -1,3 +1,4 @@
+
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -8,23 +9,30 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     text-align: center;
+        @media (max-width:375px){
+            display: flex;
+            flex-direction: column;
+            height: 160px;
+            justify-content: space-around;
+            padding: 10px;
+        }
 `
 
 export const ButtonContainer = styled.div`
-    width: 500px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding:10px;
+    width: 350px;
+    justify-content: center;
 `
 
 export const Logo = styled.div`
-    background-color: lightgoldenrodyellow;
-    width: 50px;
-    height: 50px;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    @media (max-width:375px){
+        width: 100vw;
+    }
 `
 
 export const IMGLogo = styled.img`
-    width: 50px;
-    height: 50px;
+    width: 50%;
+    cursor: pointer;
 `
