@@ -29,3 +29,7 @@ export const ItensCadastroAnuncio = styled.div`
     display: flex;
     flex-direction: column;
 `
+
+export const OptionCategory = styled.option`
+    color: black;
+`

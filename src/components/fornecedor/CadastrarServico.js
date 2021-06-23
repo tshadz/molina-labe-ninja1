@@ -1,6 +1,6 @@
 import React from 'react'
 import  Button  from '../diversos/Button'
-import {ItensCadastroAnuncio} from './styled'
+import {ItensCadastroAnuncio, OptionCategory} from './styled'
 import { headers, baseUrl } from '../config/config'
 import axios from 'axios'
 // import Calendar from 'rc-calendar';
@@ -8,13 +8,16 @@ import axios from 'axios'
 export class CadastrarServico extends React.Component{
 
     state={
+        selectCategory: ["Selecione","Assistência Técnica","Aulas","Autos","Consultoria","Design e Tecnologia","Eventos","Moda e Beleza","Reformas","Saúde","Serviços Domésticos"],
+        inputCategory:"Selecione",
         inputTitle:"",
+        inputURLImage:"",
         inputDescription:"",
         inputRemuneration:"",
         inputTime:"",
         paymentsMethods:[
             {value: "PayPall", isChecked: false},
-            {value: "Dinheiro", isChecked: false},
+            {value: "Dinheiro", isChecked: true},
             {value: "Pix", isChecked: false},
             {value: "Boleto", isChecked: false},
             {value: "Debito", isChecked: false},
@@ -22,8 +25,16 @@ export class CadastrarServico extends React.Component{
         ]
     }
 
+    onChangeCategory = (event) => {
+        this.setState({inputCategory: event.target.value})
+    }
+
     onChangeTitle = (event) => {
         this.setState({inputTitle: event.target.value})
+    }
+
+    onChangeImage = (event) => {
+        this.setState({inputURLImage: event.target.value})
     }
 
     onChangeDescription = (event) => {
@@ -47,7 +58,17 @@ export class CadastrarServico extends React.Component{
         this.setState({inputTime: newTime})
     }
 
-    onClickCreateJob = () => {
+    onClickCheckFilling = () => {
+        if(this.state.inputCategory !== "Selecione"){
+            this.CreateJob();
+        }else{
+            alert("Todos os Campos devem ser preenchidos")
+        }
+    }
+
+    CreateJob = () => {
+        const categoryTitleImage = `${this.state.inputCategory}#@*${this.state.inputTitle}#@*${this.state.inputURLImage}`
+
         const paymentsMethods = this.state.paymentsMethods.filter((method) => {
             return method.isChecked === true
         }).map((method) => {
@@ -55,7 +76,7 @@ export class CadastrarServico extends React.Component{
         })
 
         const body ={
-            title: this.state.inputTitle,
+            title: categoryTitleImage,
             description: this.state.inputDescription,
             price: Number(this.state.inputRemuneration),
             paymentMethods: paymentsMethods,
@@ -65,11 +86,12 @@ export class CadastrarServico extends React.Component{
         .then((response) => {
             alert(response.data.message)
             this.setState({
+                inputCategory:"",
                 inputTitle:"",
+                inputURLImage:"",
                 inputDescription:"",
                 inputRemuneration:"",
                 inputTime:"",
-                inputPayment: [],
                 paymentsMethods:[
                     {value: "PayPall", isChecked: false},
                     {value: "Dinheiro", isChecked: false},
@@ -97,55 +119,51 @@ export class CadastrarServico extends React.Component{
     }
 
     render(){
-        console.log("pagamentos Selecionados", this.state.paymentsMethods)
 
         const paymentsMethods = this.state.paymentsMethods.map((method,index) =>{
-            return <ul id={index}>
+            return <ul key={index}>
                 <input type="checkbox" onClick={() => this.onClickHandelChecks(method,index)}/>{method.value}
             </ul>
+        })
+
+        const allCategories = this.state.selectCategory.map((category,index) =>{
+            return <option key={index} value={category} >{category}</option>
         })
         return(
             <div>
                 <h2>Anuncie Seu Trabalho Conosco</h2>
                 <ItensCadastroAnuncio>
                 <p>Categoria</p>
-                    <select>
-                        <option>Selecione</option>
-                        <option>Assistência Técnica</option>
-                        <option>Assistência Técnica</option>
-                        <option>Aulas</option>
-                        <option>Autos</option>
-                        <option>Consultoria</option>
-                        <option>Design e Tecnologia</option>
-                        <option>Eventos</option>
-                        <option>Moda e Beleza</option>
-                        <option>Reformas</option>
-                        <option>Saúde</option>
-                        <option>Serviços Domésticos</option>
+                    <select onChange={this.onChangeCategory} required>
+                        {allCategories}
                     </select>
                 </ItensCadastroAnuncio>
                 <ItensCadastroAnuncio>
                 <label>Serviço:</label>
-                    <input type="text" size="32" onChange={this.onChangeTitle} placeholder="Insira aqui um título para seu serviço."/>
+                    <input type="text" size="32" onChange={this.onChangeTitle} value={this.state.inputTitle} placeholder="Insira aqui um título para seu serviço." required/>
+                </ItensCadastroAnuncio>
+                <ItensCadastroAnuncio>
+                <label>Imagem:</label>
+                    <input type="text" onChange={this.onChangeImage} value={this.state.inputURLImage} placeholder="Insira aqui um link para imagem do seu serviço." required/>
                 </ItensCadastroAnuncio>
                 <ItensCadastroAnuncio>
                     <p>Descrição:</p>
-                    <textarea  cols="35" rows="5" onChange={this.onChangeDescription} placeholder="Insira aqui um breve resumo do serviço a ser prestado."/>
+                    <textarea  cols="35" rows="5" onChange={this.onChangeDescription} value={this.state.inputDescription} placeholder="Insira aqui um breve resumo do serviço a ser prestado." required/>
                 </ItensCadastroAnuncio>
                 <ItensCadastroAnuncio>
                     <p>Valor de Remuneração:</p>
-                    <input type="number" size="32"  onChange={this.onChangeRemuneration} placeholder="Informe valor em real e apenas números. Ex: 500,00"/>
+                    <input type="number" size="32"  onChange={this.onChangeRemuneration} value={this.state.inputRemuneration} placeholder="Informe valor em real e apenas números. Ex: 500,00" required/>
                 </ItensCadastroAnuncio>
                 <ItensCadastroAnuncio>
                     <p>Prazo</p>
-                    <input type="data" onChange={this.onChangeTime} placeholder="DD/MM/AAAA"/>
+                    <input type="data" onChange={this.onChangeTime} value={this.state.inpuTime} placeholder="DD/MM/AAAA" required/>
                 </ItensCadastroAnuncio>
                 <ItensCadastroAnuncio>
                     <p>Método Para pagamento</p>
                     {paymentsMethods}
                 </ItensCadastroAnuncio>
                 <ItensCadastroAnuncio>
-                    <Button text="Enviar" onClick={this.onClickCreateJob}/><Button onClick={this.props.goToProviderHome} text="Voltar"/>
+                    <Button type= "submit" text="Enviar" onClick={this.onClickCheckFilling}/><Button onClick={this.props.goToProviderHome} text="Voltar"/>
                 </ItensCadastroAnuncio>
             </div>
         )
