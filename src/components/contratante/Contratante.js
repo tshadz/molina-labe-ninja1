@@ -17,7 +17,7 @@ export class Contratante extends Component {
     minFilter: '',
     maxFilter: '',
     titleFilter: '',
-    sort: 'DECRESCENTE',
+    sort: 'growingDueDate',
     categoryFilter: '',
     taken: true,
     arrayCategory: [
@@ -45,14 +45,15 @@ export class Contratante extends Component {
         .filter((job)=> this.state.taken ? job.taken === false : true)
         .filter((job) => this.state.minFilter ? job.price> this.state.minFilter : true)
         .filter((job) => this.state.maxFilter ? job.price< this.state.maxFilter : true)
-        .sort((a, b) => this.state.sort === 'CRESCENTE' ? a.price- b.price: b.price- a.price)
+        .sort((a, b) => this.state.sort!=='risingPrice' && this.state.sort!== 'decreasingPrice'? true : this.state.sort === 'risingPrice' ? a.price- b.price: b.price- a.price)
+        .sort((a, b) => this.state.sort!=='growingDueDate' && this.state.sort!== 'descendingDueDate'? true : this.state.sort === 'growingDueDate' ? a.dueDate< b.dueDate: b.dueDate< a.dueDate)
+        .sort((a, b) => this.state.sort!=='alphabeticalOrder' && this.state.sort!== 'reverseAlphabeticalOrder'? true : this.state.sort === 'alphabeticalOrder' ? a.title> b.title: b.title> a.title)
   }
 
   changeCategory = (category) => {
     this.setState({
       categoryFilter:category.name
     })
-    console.log(this.state.categoryFilter)
   }
 
   clearFilters = () => {
@@ -60,7 +61,7 @@ export class Contratante extends Component {
       minFilter: '',
       maxFilter: '',
       titleFilter: '',
-      sort: 'DECRESCENTE',
+      sort: 'risingPrice',
       categoryFilter: '',
     })
   }

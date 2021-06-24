@@ -9,8 +9,17 @@ export class Filtro extends Component {
 
     return (
         <div>
-         
             <Container>
+             <p>Listar por:</p>
+                <select name='sort' onChange={this.props.handleFieldChange} >
+                  <option name='sort' value={"default"}>Selecione</option>
+                  <option name='sort' value={"risingPrice"}>Preço crescente</option>
+                  <option name='sort' value={"decreasingPrice"}>Preço decrescente</option>
+                  <option name='sort' value={"growingDueDate"}>Data crescente</option>
+                  <option name='sort' value={"descendingDueDate"}>Data decrescente</option>
+                  <option name='sort' value={"alphabeticalOrder"}>A - Z</option>
+                  <option name='sort' value={"reverseAlphabeticalOrder"}>Z - A</option>
+                </select>
                 <h3>Filtros</h3>
                   <InputContainer>
                     Valor mínimo:
@@ -44,6 +53,7 @@ export class Filtro extends Component {
                   icon = {<FcClearFilters />}
                   onClick={this.props.clearFilters}
                 />
+              
             </Container>
         </div>
     )
