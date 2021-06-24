@@ -22,39 +22,32 @@ export const CardContainer = styled.div`
 
 
 export const CardStyle = styled.div`
-    background-color: #EBEBF2; 
-    height:300px;  
-    width: 220px;
-    margin:10px;
-    
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
     background-position:center;
     background-size:cover;
-
-    /* margin: 20px;
-    background:#e3e3e3;
-    width:200px;
-    height:300px;
-    padding:5px;
-    background-image:url("https://s-media-cache-ak0.pinimg.com/originals/f2/40/24/f24024aec1447cdb0418bbc8d349ec6c.jpg");
-    background-position:center;
-    background-size:cover; */
     
+
 `
 
 
 export const ImageCard = styled.img `
     width: 100%;
-    height: 130px;
+    height: 180px;
 
 `
 
 export const CardInformarion = styled.div`
 
+    z-index: 1;
     opacity:0;
+    top:0;
+    left: 0;
     width:100%;
     height:100%;
-    background:#d65050;
-    color:#fff;
+    background:#B7ADD9;
     transition: all .2s;
     display:flex;
     justify-content:center;
@@ -68,5 +61,15 @@ export const CardInformarion = styled.div`
         transform: scale(1);
         cursor: pointer;
     }
+
+`
+
+
+export const ContainerCard = styled.div`
+    background-color: #EBEBF2; 
+    height:400px;  
+    width: 220px;
+    position: relative;
+    margin: 10px;
 
 `
