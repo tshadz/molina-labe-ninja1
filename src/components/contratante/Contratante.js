@@ -48,13 +48,31 @@ export class Contratante extends Component {
         .sort((a, b) => this.state.sort === 'CRESCENTE' ? a.price- b.price: b.price- a.price)
   }
 
+  changeCategory = (category) => {
+    this.setState({
+      categoryFilter:category.name
+    })
+    console.log(this.state.categoryFilter)
+  }
+
+  clearFilters = () => {
+    this.setState({
+      minFilter: '',
+      maxFilter: '',
+      titleFilter: '',
+      sort: 'DECRESCENTE',
+      categoryFilter: '',
+    })
+  }
+
   render() {
 
     const renderCategory = this.state.arrayCategory.map((category)=>{
       return <>
-                <Icon
+                <Icon key={category.name}
                   text = {category.name}
                   icon = {category.icon}
+                  onClick={()=>this.changeCategory(category)}
                 />
               </>
     })
@@ -74,6 +92,7 @@ export class Contratante extends Component {
             titleFilter={this.state.titleFilter}
             categoryFilter={this.state.categoryFilter}
             sort={this.state.sort}
+            clearFilters={this.clearFilters}
           />
           <Card
             filteredJobs = {filteredJobs}

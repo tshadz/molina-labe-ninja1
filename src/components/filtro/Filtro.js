@@ -1,13 +1,7 @@
 import React, { Component } from 'react'
 import { Container, InputContainer } from './styled'
+import { FcClearFilters } from 'react-icons/fc'
 import Icon from '../diversos/icons'
-import { GiClothes } from 'react-icons/gi'
-import { FaChalkboardTeacher, FaHandshake, FaHome } from 'react-icons/fa'
-import { AiFillCar } from 'react-icons/ai'
-import { RiComputerFill, RiHeartPulseFill } from 'react-icons/ri'
-import { BiDrink } from 'react-icons/bi'
-import { IoIosHammer } from 'react-icons/io'
-import { BsGearFill } from 'react-icons/bs'
 
 export class Filtro extends Component {
  
@@ -45,6 +39,11 @@ export class Filtro extends Component {
                       onChange={this.props.handleFieldChange}
                     />
                   </InputContainer>
+                <Icon 
+                  text = 'clear'
+                  icon = {<FcClearFilters />}
+                  onClick={this.props.clearFilters}
+                />
             </Container>
         </div>
     )

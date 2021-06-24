@@ -7,6 +7,7 @@ const Container = styled.div`
     justify-content: space-between;
     align-items:center;
     height: auto;
+    width: 100px;
     i {
         font-size: 40px;
         margin: 5px;
@@ -15,12 +16,15 @@ const Container = styled.div`
     p {
         margin: 0;
     }
+    :hover{
+        opacity: 0.7;
+    }
     
 `
 const Icon = (props) =>{
     return (
         <Container 
-            //onClick={()=>props.onClick()}
+            onClick={()=>props.onClick()}
         >
             <i>{props.icon}</i>
             <p>{props.text}</p>
