@@ -27,7 +27,7 @@ export class Card extends Component {
           <CardInformarion>
             <p> {job.description}</p>
             <p> Métodos de pagamento: {job.paymentMethods}</p>
-            <button onClick={this.addShoppingCart(job)}></button>
+            <button onClick={()=>this.addShoppingCart(job)}></button>
           </CardInformarion>
         </CardStyle>
       )

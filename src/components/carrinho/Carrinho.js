@@ -9,36 +9,36 @@ export class Carrinho extends Component {
     jobs: []
   }
 
-componentDidMount () {
-  this.getAllJobs()
-}
+// componentDidMount () {
+//   this.getAllJobs()
+// }
 
-getAllJobs = async () => {
-  const params = "jobs"
+// getAllJobs = async () => {
+//   const params = "jobs"
   
-  try {
-    const response = await axios.get(baseUrl+params,headers)
-    const takenJobs = response.data.jobs
-    .filter((item)=>{return item.taken===true})
-    .map((item)=>{
-      if (item.taken===true) {
-        return {...item,
-          category: item.title.split("#@*")[0],
-          title2: item.title.split("#@*")[1],
-          image: item.title.split("#@*")[2]
-          }
-      }
-    })  
+//   try {
+//     const response = await axios.get(baseUrl+params,headers)
+//     const takenJobs = response.data.jobs
+//     .filter((item)=>{return item.taken===true})
+//     .map((item)=>{
+//       if (item.taken===true) {
+//         return {...item,
+//           category: item.title.split("#@*")[0],
+//           title2: item.title.split("#@*")[1],
+//           image: item.title.split("#@*")[2]
+//           }
+//       }
+//     })  
 
-    this.setState({
-      jobs: takenJobs
-    })
+//     this.setState({
+//       jobs: takenJobs
+//     })
     
-  } catch (error) {
-    alert(`Erro ao carregar carrinho.\n${error}`)
-  }
+//   } catch (error) {
+//     alert(`Erro ao carregar carrinho.\n${error}`)
+//   }
 
-}
+// }
 
 updateJob = async (id) => {
   const params = "jobs/"+id
@@ -70,7 +70,7 @@ onClickToHire = () => {
 
   render() {
   
-  console.log(this.state.jobs)
+  // console.log(this.state.jobs)
   
   const shoppingCart = this.props.shoppingCart.map((item)=>{
     return <ContainerText key={item.id}>
