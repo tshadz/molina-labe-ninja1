@@ -8,11 +8,7 @@ export class CardProdutos extends Component {
     return (
       <Container>
           <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
+          
         </Container>
     )
   }

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Container } from './styled'
 import { CardProdutos } from '../cardProdutos/CardProdutos'
+import { Card } from '../cardProdutos/Card'
+
 import { Carrinho } from '../carrinho/Carrinho'
 import { Filtro } from '../filtro/Filtro'
 
