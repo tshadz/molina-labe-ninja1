@@ -11,12 +11,38 @@ const Container = styled.div`
 
 export class AppContainer extends Component {
  
+  state = {
+    activePage: "home",
+  }
+
+  goToHome = () => {
+    this.setState({
+      activePage: "home"
+    })
+  }
+
+  goToCustomer = () => {
+    this.setState({
+      activePage: "customer"
+    })
+  }
+
+  goToProvider = () => {
+    this.setState({
+      activePage: "provider"
+    })
+  }
+
   render() {
  
     return (
       <Container>
-        < Header />
-        < Main />
+        < Header
+        goToHome={this.goToHome}
+        goToCustomer={this.goToCustomer}
+        goToProvider={this.goToProvider}      
+        />
+        < Main activePage={this.state.activePage}/>
         <Footer />
       </Container>
     )

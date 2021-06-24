@@ -18,9 +18,15 @@ export class Header extends Component {
               </Logo>
               <ButtonContainer>
                 <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
-                  <Button>Home</Button>
-                  <Button>Contratante</Button>
-                  <Button>Fornecedor</Button>
+                  <Button
+                  onClick={this.props.goToHome}
+                  >Home</Button>
+                  <Button
+                  onClick={this.props.goToCustomer}                
+                  >Contratante</Button>
+                  <Button
+                  onClick={this.props.goToProvider} 
+                  >Fornecedor</Button>
                 </ButtonGroup>
               </ButtonContainer>
               
