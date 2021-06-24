@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { Container, InputContainer } from './styled'
+import { FcClearFilters } from 'react-icons/fc'
+import Icon from '../diversos/icons'
 
 export class Filtro extends Component {
-  
+ 
   render() {
-   
+
     return (
         <div>
          
@@ -37,6 +39,11 @@ export class Filtro extends Component {
                       onChange={this.props.handleFieldChange}
                     />
                   </InputContainer>
+                <Icon 
+                  text = 'clear'
+                  icon = {<FcClearFilters />}
+                  onClick={this.props.clearFilters}
+                />
             </Container>
         </div>
     )

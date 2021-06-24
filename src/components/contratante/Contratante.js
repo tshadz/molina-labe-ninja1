@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
-import { Container } from './styled'
-import { CardProdutos } from '../cardProdutos/CardProdutos'
+import { Container, CategoryContainer, BodyContainer} from './styled'
 import { Card } from '../cardProdutos/Card'
-import { Carrinho } from '../carrinho/Carrinho'
 import { Filtro } from '../filtro/Filtro'
-
+import Icon from '../diversos/icons'
+import { GiClothes } from 'react-icons/gi'
+import { FaChalkboardTeacher, FaHandshake, FaHome } from 'react-icons/fa'
+import { AiFillCar } from 'react-icons/ai'
+import { RiComputerFill, RiHeartPulseFill } from 'react-icons/ri'
+import { BiDrink } from 'react-icons/bi'
+import { IoIosHammer } from 'react-icons/io'
+import { BsGearFill } from 'react-icons/bs'
 
 export class Contratante extends Component {
 
@@ -15,6 +20,18 @@ export class Contratante extends Component {
     sort: 'DECRESCENTE',
     categoryFilter: '',
     taken: true,
+    arrayCategory: [
+      {name: "Assistência Técnica", icon: <BsGearFill/>},
+      {name: "Aulas", icon: <FaChalkboardTeacher/>},
+      {name: "Autos", icon: <AiFillCar/>},
+      {name: "Consultoria", icon: <FaHandshake/>},
+      {name: "Design e Tecnologia", icon: <RiComputerFill/>},
+      {name: "Eventos", icon: <BiDrink/>},
+      {name: "Moda e Beleza", icon: <GiClothes/>},
+      {name: "Reformas", icon: <IoIosHammer/>},
+      {name: "Saúde", icon: <RiHeartPulseFill/>},
+      {name: "Serviços Domésticos", icon: <FaHome/>},
+    ]
   }
 
   handleFieldChange = event => {     
@@ -31,24 +48,57 @@ export class Contratante extends Component {
         .sort((a, b) => this.state.sort === 'CRESCENTE' ? a.price- b.price: b.price- a.price)
   }
 
+  changeCategory = (category) => {
+    this.setState({
+      categoryFilter:category.name
+    })
+    console.log(this.state.categoryFilter)
+  }
+
+  clearFilters = () => {
+    this.setState({
+      minFilter: '',
+      maxFilter: '',
+      titleFilter: '',
+      sort: 'DECRESCENTE',
+      categoryFilter: '',
+    })
+  }
+
   render() {
+
+    const renderCategory = this.state.arrayCategory.map((category)=>{
+      return <>
+                <Icon key={category.name}
+                  text = {category.name}
+                  icon = {category.icon}
+                  onClick={()=>this.changeCategory(category)}
+                />
+              </>
+    })
+
     const filteredJobs = this.filterAndSort()
  
     return (
-      <Container>
-        <Filtro 
-          handleFieldChange= {this.handleFieldChange}
-          minFilter={this.state.minFilter}
-          maxFilter={this.state.maxFilter}
-          titleFilter={this.state.titleFilter}
-          categoryFilter={this.state.categoryFilter}
-          sort={this.state.sort}
-        />
-        <Card
-          filteredJobs = {filteredJobs}
-        />
-        
-      </Container>
+      <BodyContainer>
+        <CategoryContainer>
+          {renderCategory}
+        </CategoryContainer>
+        <Container>
+          <Filtro 
+            handleFieldChange= {this.handleFieldChange}
+            minFilter={this.state.minFilter}
+            maxFilter={this.state.maxFilter}
+            titleFilter={this.state.titleFilter}
+            categoryFilter={this.state.categoryFilter}
+            sort={this.state.sort}
+            clearFilters={this.clearFilters}
+          />
+          <Card
+            filteredJobs = {filteredJobs}
+          />
+        </Container>
+      </BodyContainer>
     )
   }
 }
