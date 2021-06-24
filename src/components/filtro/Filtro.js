@@ -1,10 +1,18 @@
 import React, { Component } from 'react'
 import { Container, InputContainer } from './styled'
+import Icon from '../diversos/icons'
+import { GiClothes } from 'react-icons/gi'
+import { FaChalkboardTeacher, FaHandshake, FaHome } from 'react-icons/fa'
+import { AiFillCar } from 'react-icons/ai'
+import { RiComputerFill, RiHeartPulseFill } from 'react-icons/ri'
+import { BiDrink } from 'react-icons/bi'
+import { IoIosHammer } from 'react-icons/io'
+import { BsGearFill } from 'react-icons/bs'
 
 export class Filtro extends Component {
-  
+ 
   render() {
-   
+
     return (
         <div>
          
