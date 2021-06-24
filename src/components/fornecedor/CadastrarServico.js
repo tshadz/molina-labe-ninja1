@@ -25,24 +25,12 @@ export class CadastrarServico extends React.Component{
         ]
     }
 
+    handleFieldChange = event => {     
+        this.setState({[event.target.name]:event.target.value})  
+    }
+
     onChangeCategory = (event) => {
         this.setState({inputCategory: event.target.value})
-    }
-
-    onChangeTitle = (event) => {
-        this.setState({inputTitle: event.target.value})
-    }
-
-    onChangeImage = (event) => {
-        this.setState({inputURLImage: event.target.value})
-    }
-
-    onChangeDescription = (event) => {
-        this.setState({inputDescription: event.target.value})
-    }
-
-    onChangeRemuneration = (event) => {
-        this.setState({inputRemuneration: event.target.value})
     }
 
     formataData = (data) => {
@@ -134,29 +122,29 @@ export class CadastrarServico extends React.Component{
                 <h2>Anuncie Seu Trabalho Conosco</h2>
                 <ItensCadastroAnuncio>
                 <p>Categoria</p>
-                    <select onChange={this.onChangeCategory} required>
+                    <select name='inputCategory' onChange={this.handleFieldChange} required>
                         {allCategories}
                     </select>
                 </ItensCadastroAnuncio>
                 <ItensCadastroAnuncio>
                 <label>Serviço:</label>
-                    <input type="text" size="32" onChange={this.onChangeTitle} value={this.state.inputTitle} placeholder="Insira aqui um título para seu serviço." required/>
+                    <input name='inputTitle' type="text" size="32" onChange={this.handleFieldChange} value={this.state.inputTitle} placeholder="Insira aqui um título para seu serviço." required/>
                 </ItensCadastroAnuncio>
                 <ItensCadastroAnuncio>
                 <label>Imagem:</label>
-                    <input type="text" onChange={this.onChangeImage} value={this.state.inputURLImage} placeholder="Insira aqui um link para imagem do seu serviço." required/>
+                    <input name='inputURLImage' type="text" onChange={this.handleFieldChange} value={this.state.inputURLImage} placeholder="Insira aqui um link para imagem do seu serviço." required/>
                 </ItensCadastroAnuncio>
                 <ItensCadastroAnuncio>
                     <p>Descrição:</p>
-                    <textarea  cols="35" rows="5" onChange={this.onChangeDescription} value={this.state.inputDescription} placeholder="Insira aqui um breve resumo do serviço a ser prestado." required/>
+                    <textarea  name='inputDescription' cols="35" rows="5" onChange={this.handleFieldChange} value={this.state.inputDescription} placeholder="Insira aqui um breve resumo do serviço a ser prestado." required/>
                 </ItensCadastroAnuncio>
                 <ItensCadastroAnuncio>
                     <p>Valor de Remuneração:</p>
-                    <input type="number" size="32"  onChange={this.onChangeRemuneration} value={this.state.inputRemuneration} placeholder="Informe valor em real e apenas números. Ex: 500,00" required/>
+                    <input name='inputRemuneration' type="number" size="32"  onChange={this.handleFieldChange} value={this.state.inputRemuneration} placeholder="Informe valor em real e apenas números. Ex: 500,00" required/>
                 </ItensCadastroAnuncio>
                 <ItensCadastroAnuncio>
                     <p>Prazo</p>
-                    <input type="data" onChange={this.onChangeTime} value={this.state.inpuTime} placeholder="DD/MM/AAAA" required/>
+                    <input name='inputTime' type="data" onChange={this.handleFieldChange} value={this.state.inpuTime} placeholder="DD/MM/AAAA" required/>
                 </ItensCadastroAnuncio>
                 <ItensCadastroAnuncio>
                     <p>Método Para pagamento</p>
