@@ -72,7 +72,7 @@ onClickToHire = () => {
   
   console.log(this.state.jobs)
   
-  const shoppingCart = this.state.jobs.map((item)=>{
+  const shoppingCart = this.props.shoppingCart.map((item)=>{
     return <ContainerText key={item.id}>
       <p>Serviço: {item.title2}</p>
       <p>Valor: R${item.price.toFixed(2)}</p>
