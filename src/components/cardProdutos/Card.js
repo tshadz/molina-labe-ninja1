@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { CardContainer, ImageCard, CardStyle, CardInformarion, ContainerCard, ContainerSemProduto} from './styled'
+import { CardContainer, ImageCard, CardStyle, CardInformarion, ContainerCard } from './styled'
 import { Carrinho } from '../carrinho/Carrinho'
 
 export class Card extends Component {
@@ -9,45 +9,70 @@ export class Card extends Component {
     shoppingCart: [],
   }
 
-  addShoppingCart = (job) =>{
+  addShoppingCart = (job) => {
+    const newItem = this.state.shoppingCart.find((item) => job.id === item.id)
+    if (newItem) {
+      alert("Serviço já está no carrinho.")
+    } else {
+      this.setState({
+        shoppingCart: [...this.state.shoppingCart, job]
+      })
+    }
+  }
+
+  onClickToHire = () => {
     this.setState({
-      shoppingCart: [...this.state.shoppingCart, job]
+      shoppingCart: []
+    })
+  }
+
+  deleteFromShoppingCart = (job) => {
+    const itemToRemove = this.state.shoppingCart.filter((item)=>{
+       return item !== job
+      })
+    this.setState({
+      shoppingCart: itemToRemove
     })
   }
 
   render() {
+    console.log(this.state.shoppingCart)
     const jobsSummary = this.props.filteredJobs.map((job) => {
-      return( 
+      return (
         <ContainerCard>
-          <CardStyle key={job.id}> 
+          <CardStyle key={job.id}>
             <p> {job.title.split("#@*")[0]} </p> {/* categoria */}
             <ImageCard src={job.title.split("#@*")[2]} />
-            <p>{job.title.split("#@*")[1]} </p> 
+            <p>{job.title.split("#@*")[1]} </p>
             <p> R$ {job.price}</p>
+
           </CardStyle>
           <CardInformarion>
             <p> {job.description}</p>
-            <p> Métodos de pagamento: </p>
-            <p>{job.paymentMethods[0]} {job.paymentMethods[1]} {job.paymentMethods[2]} {job.paymentMethods[3]} {job.paymentMethods[4]} </p>
-            <button onClick={()=>this.addShoppingCart(job)}> CONTRATAR</button>
+            <p> Métodos de pagamento:
+
+
+              {job.paymentMethods[0]}, {job.paymentMethods[1]}, {job.paymentMethods[2]}, {job.paymentMethods[3]}, {job.paymentMethods[4]},</p>
+            
+            <button
+            onClick={() => this.addShoppingCart(job)}
+            > CONTRATAR</button>            
+          
           </CardInformarion>
         </ContainerCard>
       )
     })
+
     return (<>
-        <div>
-          {jobsSummary.length === 0 ? 
-            <ContainerSemProduto>
-              <p> Nenhum produto encontrado </p>
-            </ContainerSemProduto>
-          : <CardContainer>{jobsSummary} </CardContainer> } 
-        </div>
-        <Carrinho
-          shoppingCart={this.state.shoppingCart}
-        />
-      </>
+      <CardContainer>
+        {jobsSummary}
+      </CardContainer>
+      <Carrinho
+        shoppingCart={this.state.shoppingCart}
+        deleteItemFromCart={this.deleteFromShoppingCart}
+        onClickToHire={this.onClickToHire}
+      />
+    </>
     )
   }
 }
-
-
