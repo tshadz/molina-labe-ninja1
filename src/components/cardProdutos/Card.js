@@ -34,8 +34,6 @@ export class Card extends Component {
         </ContainerCard>
       )
     })
-    console.log("vitoria", jobsSummary)
-    console.log(this.props.filteredJobs)
     return (<>
         <div>
           {jobsSummary.length === 0 ? 
