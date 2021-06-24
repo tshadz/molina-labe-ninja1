@@ -34,7 +34,9 @@ export class Main extends Component {
     render() {
     
     const activePage = this.props.activePage === "provider" ?
-    <Fornecedor allJobs= {this.state.allJobs}/> :
+    <Fornecedor 
+      allJobs= {this.state.allJobs}
+      getAllJobs={this.getAllJobs}/> :
     this.props.activePage === "customer" ?
     <Contratante
                 allJobs= {this.state.allJobs}
@@ -48,16 +50,7 @@ export class Main extends Component {
     return (
         <div>
             <Container>
-
               {activePage}
-              {/* <Contratante
-                allJobs= {this.state.allJobs}
-                getAllJobs={this.getAllJobs}
-                filteredJobs = {this.state.filteredJobs}
-              />
-              <Fornecedor
-                allJobs= {this.state.allJobs}
-              /> */}
             </Container>
         </div>
     )
