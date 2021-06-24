@@ -4,6 +4,9 @@ export const Container = styled.div`
     background-color: #9F8FD9;
     height: 600px;
     width: 300px;
+
+    margin-bottom: 15px;
+
 `
 
 export const ContainerText = styled.div`
