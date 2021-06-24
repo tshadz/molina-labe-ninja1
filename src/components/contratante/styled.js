@@ -12,3 +12,16 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
 `
+
+export const CategoryContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: auto;
+`
+
+export const BodyContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+`
