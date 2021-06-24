@@ -35,7 +35,7 @@ export const CardStyle = styled.div`
 
 export const ImageCard = styled.img `
     width: 100%;
-    height: 180px;
+    height: 190px;
 
 `
 
@@ -71,5 +71,14 @@ export const ContainerCard = styled.div`
     width: 220px;
     position: relative;
     margin: 10px;
+
+`
+
+export const ContainerSemProduto = styled.div`
+    
+    text-align: initial;
+    padding-top: 55px;
+    margin-left: 15px;
+    margin-right: 15px;
 
 `
