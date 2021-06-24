@@ -2,15 +2,24 @@ import React from 'react'
 import  Button  from '../diversos/Button'
 import axios from 'axios'
 import { headers, baseUrl } from '../config/config'
+import { CardContainer, ImageCard, CardStyle, CardInformarion, ContainerCard} from './styled'
 
 export class ServicosCadastrados extends React.Component{
     state = {
         jobs:[]
     }
 
+    // componentDidMount(){
+    //     this.props.getAllJobs()
+    // }
+
     componentDidMount(){
         this.getAllJobs()
     }
+
+    // componentDidUpdate(){
+    //     this.props.getAllJobs()
+    // }
 
     componentDidUpdate(){
         this.getAllJobs()
@@ -19,7 +28,6 @@ export class ServicosCadastrados extends React.Component{
     getAllJobs = () =>{
         axios.get(baseUrl+"jobs",headers )
         .then((response) => {
-            // console.log("res jobs", response.data)
             this.setState({jobs: response.data.jobs})
         })
         .catch((error) => {
@@ -42,23 +50,34 @@ export class ServicosCadastrados extends React.Component{
     }
 
     render(){
-        const allJobs = this.state.jobs.map((job) =>{
-            return(
-                <div key={job.id}>
-                    <p>{job.title}</p>
-                    <p>{job.description}</p>
-                    <p>R$ {job.price}</p>
-                    <p>{job.paymentMethods.map((payment) => `| ${payment} |`)}</p>
-                    <p>{job.dueDate}</p>
-                    <Button text="Apagar" onClick={() => this.onClickDeleteJob(job.id)}/>
-                </div>
+        const jobsSummary = this.state.jobs.map((job) => {
+            return( 
+            <ContainerCard key={job.id}>
+                <CardStyle key={job.id}> 
+                <p> {job.title.split("#@*")[0]} </p>
+                <ImageCard src={job.title.split("#@*")[2]} />
+                <p>{job.title.split("#@*")[1]} </p> 
+                <p> R$ {job.price}</p>
+                
+                </CardStyle>
+                <CardInformarion>
+                <p> {job.description}</p>
+                <p> Métodos de pagamento: 
+                    
+                {job.paymentMethods.map((payment) => `| ${payment} |`)}</p>
+                <button onClick={()=>this.onClickDeleteJob(job.id)}> DELETAR</button>
+                </CardInformarion>
+            </ContainerCard>
             )
         })
+
         return(
             <div>
             <Button onClick={this.props.goToProviderHome} text="Voltar"/>
 
-            {allJobs}
+            <CardContainer>
+            {jobsSummary}
+            </CardContainer>
 
 
             </div>
