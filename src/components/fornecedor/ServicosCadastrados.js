@@ -9,19 +9,7 @@ export class ServicosCadastrados extends React.Component{
         jobs:[]
     }
 
-    // componentDidMount(){
-    //     this.props.getAllJobs()
-    // }
-
     componentDidMount(){
-        this.getAllJobs()
-    }
-
-    // componentDidUpdate(){
-    //     this.props.getAllJobs()
-    // }
-
-    componentDidUpdate(){
         this.getAllJobs()
     }
 
@@ -29,10 +17,13 @@ export class ServicosCadastrados extends React.Component{
         axios.get(baseUrl+"jobs",headers )
         .then((response) => {
             this.setState({jobs: response.data.jobs})
+            this.toFormatDate()
         })
         .catch((error) => {
             alert(`Erro tente mais tarde`)
         })
+        
+        
     }
 
     onClickDeleteJob = (id) => {
@@ -49,7 +40,25 @@ export class ServicosCadastrados extends React.Component{
 
     }
 
+    toFormatDate = () =>{
+        let newJobs = this.state.jobs
+        newJobs.forEach((job) => {
+            const newDate = job.dueDate.split("T")
+            console.log("nova data", newDate)
+            const ano = newDate[0].split("-")[0]
+            const mes = newDate[0].split("-")[1]
+            const dia = newDate[0].split("-")[2]
+
+            const newDueDate = `${dia} / ${mes} / ${ano}`
+            job.dueDate = newDueDate
+            console.log("DueDate:", newDueDate)
+        })
+        this.setState({jobs: newJobs})
+        
+    }
+
     render(){
+
         const jobsSummary = this.state.jobs.map((job) => {
             return( 
             <ContainerCard key={job.id}>
@@ -63,8 +72,9 @@ export class ServicosCadastrados extends React.Component{
                 <CardInformarion>
                 <p> {job.description}</p>
                 <p> Métodos de pagamento: 
-                    
                 {job.paymentMethods.map((payment) => `| ${payment} |`)}</p>
+                <p>Prazo:</p>
+                {job.dueDate}
                 <button onClick={()=>this.onClickDeleteJob(job.id)}> DELETAR</button>
                 </CardInformarion>
             </ContainerCard>
