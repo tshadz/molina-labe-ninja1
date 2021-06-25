@@ -1,6 +1,7 @@
-<h1 align="center" id="top">:rocket: == Projeto semana 8 - Labeninja ==</h1>
+<h1 align="center" id="top">:rocket: == Projeto semana 8 - Labeninja == :rocket:</h1>
 
-:::::::::::::: Inserir Banner ::::::::::::::
+![image](https://user-images.githubusercontent.com/80704054/123421796-b778fb00-d593-11eb-9d0f-58f81af12663.png)
+
 
 <p align="center">
   <a href="#sobre">Sobre</a> &#xa0; | &#xa0; 
@@ -30,7 +31,13 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 <h2 id="funciona">:heavy_check_mark: O que funciona</h2>
 
-* Adicionar itens que funcionam
+* Pesquisa de serviços por categoria
+* Filtro de serviços por preço
+* Ordenação de serviços por preço, data e nome
+* Adição de produtos ao carrinho e finalização da contratação do serviço
+* Exibição dos pedidos realizados e possibilidade de cancelamento da contratação
+* Adição de serviços pelo prestador
+* Visualização dos serviços disponilibilizados pelo prestador
 
 <h2 id="nao-funciona">:x: O que não funciona</h2>
 
@@ -39,8 +46,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
  
 <h2 id="pendente">:construction: Em desenvolvimento</h2>
 
-- [ ] Adicionar funcionalidades que estão em desenvolvimento
-
+- [ ] Integração com API para cadastro de contratantes e prestadores (ninjas)
 
 <h2 id="link">:link: Link Surge - link para visualização do site</h2>
 :::::::::::::: Inserir link surge ::::::::::::::
@@ -100,7 +106,7 @@ $ npm run start
  <sub><b>Bruno Poggian</b></sub></a> <a href="https://github.com/BrunoPogianMallta">🚀</a></td>
  
  
-<td align="center"><a href="https://github.com/danilo-ac"><img style="border-radius: 50%" src="https://avatars.githubusercontent.com/u/83218983?v=4" width="100px" alt=""/>
+<td align="center"><a href="https://github.com/danilo-ac"><img style="border-radius: 50%" src="https://ca.slack-edge.com/TLAVDH7C2-U020JT4QD08-728187f5c368-512" width="100px" alt=""/>
  <br />
  <sub><b>Danilo Chagas</b></sub></a> <a href="https://github.com/danilo-ac">🚀</a></td>
 
