@@ -157,3 +157,91 @@ export const ContainerHowToUseCard = styled.div`
         padding: 0 5%;
     }
 `
+
+export const ContainerTestimonials = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #EBEBF2; 
+        h2{
+        font-size: 2em;
+        font-weight:900;
+        color: #7763BF;
+        margin: 1%;
+        text-align: left;
+        padding-top: 5%;
+        padding-left: 5%;
+        }  
+
+
+`
+
+export const ContainerCards = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 0;
+ `
+
+export const CardTestimonials = styled.div`
+    width: 345px;
+    height: 190px;
+    margin: 2% 0 0 2%;
+    border: 1px solid #7763BF;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 2px 5px;
+
+    #top-part{
+        width: 100%;
+        margin: 1% 1% 0% 1%;
+        display: flex;
+        
+        #image{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 1%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #name-city{
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            h4{
+                color: #7763BF;
+                margin: 0;
+            }
+            p{
+                color: #7763BF;
+                margin: 0;
+                padding: 1% 1% 0 1%;
+            }
+        }
+    }
+
+    #testimunial{
+        text-align: justify;
+        padding: 0 2%;
+        margin: 1%;
+        color: #404040;
+        flex-grow: 1;
+    }
+
+    #category{
+        background-color: #9F8FD9;
+        color: #EBEBF2;
+        margin: 0%;
+        padding-left: 2%;
+    }
+`
