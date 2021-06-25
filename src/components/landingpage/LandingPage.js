@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Container, ContainerHero, ContainerTextHero, ContainerHowToUse, CardsSteps, ContainerHowToUseCard} from "./styled"
-import { AutoRotatingCarousel } from 'material-auto-rotating-carousel';
+//import { AutoRotatingCarousel } from 'material-auto-rotating-carousel';
 
 export default class LandingPage extends React.Component {
     render() {
@@ -51,7 +51,7 @@ export default class LandingPage extends React.Component {
             </ContainerHowToUse>
 
             <div>
-                <AutoRotatingCarousel></AutoRotatingCarousel>
+                {/* <AutoRotatingCarousel></AutoRotatingCarousel> */}
             </div>
 
 
