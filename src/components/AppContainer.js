@@ -12,7 +12,7 @@ const Container = styled.div`
 export class AppContainer extends Component {
  
   state = {
-    activePage: "home",
+    activePage: "provider",
   }
 
   goToHome = () => {
