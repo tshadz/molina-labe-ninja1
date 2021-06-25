@@ -1,8 +1,5 @@
 import React from "react"
-import styled from "styled-components"
 import { Container, ContainerHero, ContainerTextHero, ContainerHowToUse, CardsSteps, ContainerHowToUseCard, ContainerTestimonials, CardTestimonials, ContainerCards } from "./styled"
-import ImgMediaCard from "./styled"
-
 
 export default class LandingPage extends React.Component {
     state = {
@@ -168,7 +165,6 @@ export default class LandingPage extends React.Component {
                     {testimunials[5]}
                 </ContainerCards>
             </ContainerTestimonials>
-
 
         </Container>
     }
