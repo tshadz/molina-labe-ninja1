@@ -3,6 +3,7 @@ import { Container } from './styled'
 import { Contratante } from '../contratante/Contratante'
 import { Fornecedor } from '../fornecedor/Fornecedor'
 import { headers, baseUrl } from '../config/config'
+import LandingPage from '../landingpage/LandingPage'
 import axios from 'axios'
 
 export class Main extends Component {
@@ -43,9 +44,9 @@ export class Main extends Component {
                 getAllJobs={this.getAllJobs}
                 filteredJobs = {this.state.filteredJobs}
               /> :
-    <div>
-      landing pageeeeee
-    </div>
+    <LandingPage>
+       
+    </LandingPage>
     
     return (
         <div>
