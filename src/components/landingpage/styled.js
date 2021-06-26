@@ -270,6 +270,8 @@ export const Descricao = styled.p`
 `
 export const Button = styled.button`
     background-color: #7537BE;
+    color: #EBEBF2;
+    border: 0;
     width: 180px;
     height: 50px;
     size: 50px;

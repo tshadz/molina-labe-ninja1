@@ -165,7 +165,7 @@ export default class LandingPage extends React.Component {
                     {testimunials[5]}
                     {testimunials[3]}
                     {testimunials[4]}
-                    {testimunials[5]}
+                    {testimunials[11]}
                 </ContainerCards>
             </ContainerTestimonials>
             <div> 
