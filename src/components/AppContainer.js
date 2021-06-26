@@ -42,7 +42,7 @@ export class AppContainer extends Component {
         goToCustomer={this.goToCustomer}
         goToProvider={this.goToProvider}      
         />
-        < Main activePage={this.state.activePage}/>
+        < Main activePage={this.state.activePage} goToCustomer={this.goToCustomer}/>
         <Footer />
       </Container>
     )
