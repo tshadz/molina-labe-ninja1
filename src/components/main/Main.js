@@ -44,9 +44,9 @@ export class Main extends Component {
                 getAllJobs={this.getAllJobs}
                 filteredJobs = {this.state.filteredJobs}
               /> :
-    <LandingPage>
-       
-    </LandingPage>
+    <LandingPage
+       goToCustomer={()=>this.props.goToCustomer()}
+    />
     
     return (
         <div>

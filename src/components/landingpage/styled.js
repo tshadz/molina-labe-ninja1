@@ -245,3 +245,92 @@ export const CardTestimonials = styled.div`
         padding-left: 2%;
     }
 `
+export const ContainerChamadaContratante = styled.div`
+    
+    border-radius: 15px;
+    margin: 15px;
+    display: flex;
+    border: 1px solid #B7ADD9;
+    justify-content: space-between;
+    align-items: center;
+    
+
+    
+`
+
+export const Titulo = styled.h2`
+   
+    
+`
+
+export const Descricao = styled.p`
+    background-color: white;
+   
+    
+`
+export const Button = styled.button`
+    background-color: #7537BE;
+    width: 180px;
+    height: 50px;
+    size: 50px;
+
+    &:hover{
+        cursor: pointer;
+        opacity: 75%;
+    }
+
+   
+    
+`
+export const ContainerTexto = styled.div`
+    margin-left: 35px;
+    margin-bottom: 15px;
+    align-items: center;
+    width: 800px;
+
+`
+
+export const ImageNinja = styled.img`
+    margin: 20px;
+    display: flex;
+    justify-content: flex-end;
+    &:hover{
+        opacity: 55%; 
+    }
+    
+
+`
+
+export const ContainerNinja = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+   
+    .containerDescicao{
+        opacity: 0%;
+    }
+    .containerImage{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+            :hover{
+            .containerDescicao{
+                display: flex;
+                padding: 15px;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                border: 3px solid #B7ADD9;
+                width: 100%;
+                height: 100%; 
+               
+                opacity: 100%;
+               
+            }}
+        
+            
+    }
+    
+
+`
