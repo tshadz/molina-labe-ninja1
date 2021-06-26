@@ -12,7 +12,7 @@ export class Footer extends Component {
             <div className={"footer-container-top-whoweare"}>
             <LabeninjasLogo></LabeninjasLogo>
             <WhoWeAre>
-              Somos um aplicativo que conecta clientes e profissionais, com os mais variados tipos de serviços. Nascemos com o propósito de conectar quem precisa com quem sabe fazer. Nosso compromisso é poder ajudar quem precisa com muito empenho e prestatividade.
+              Somos um aplicativo que conecta clientes e profissionais, com os mais variados tipos de serviços, conectando quem precisa no momento certo, com o talento certo.
             </WhoWeAre>
             </div>
 

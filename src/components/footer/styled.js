@@ -66,6 +66,10 @@ export const WhoWeAre = styled.p`
     font-weight: 400;
     color: #7763BF;
     text-align: justify;
+    -webkit-hyphens: manual;
+    -ms-hyphens: manual;
+    hyphens: manual;   
+    text-overflow:ellipsis;
     border-right: 1px solid lightgray;
     border-left: 1px solid lightgray;
 `
