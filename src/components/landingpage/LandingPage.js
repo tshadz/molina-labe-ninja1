@@ -1,5 +1,8 @@
 import React from "react"
 import { Container, ContainerHero, ContainerTextHero, ContainerHowToUse, CardsSteps, ContainerHowToUseCard, ContainerTestimonials, CardTestimonials, ContainerCards } from "./styled"
+import {ContainerChamadaContratante, Titulo, Descricao, 
+    Button, ContainerTexto, ImageNinja, ContainerNinja} from './styled'
+import ImageNinja1 from '../img/ninjaBoneco.jpg'
 
 export default class LandingPage extends React.Component {
     state = {
@@ -165,6 +168,23 @@ export default class LandingPage extends React.Component {
                     {testimunials[5]}
                 </ContainerCards>
             </ContainerTestimonials>
+            <div> 
+                <ContainerChamadaContratante> 
+                    <ContainerTexto>
+                        <Titulo> Precisando de uma ajuda? </Titulo>
+                        <Descricao> Aqui você encontra os melhores profissionais</Descricao>
+                        <Button onClick={()=>this.props.goToCustomer()}> ENCONTRE </Button>
+                    </ContainerTexto>
+                    <ContainerNinja>        
+                        <div className={"containerImage"}>                            
+                            <div className={"containerDescicao"}>
+                                <p> Nós contamos com um time de ninjas especializados em diversas áreas, aqui você encontra o conserto do seu carro, a reforma da casa e até mesmo aulas para seu filho</p>
+                            </div>
+                            <ImageNinja src={ImageNinja1} />
+                        </div>
+                    </ContainerNinja>
+                </ContainerChamadaContratante>
+            </div>
 
         </Container>
     }
