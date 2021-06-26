@@ -37,23 +37,25 @@ export class Card extends Component {
 
   render() {
     const jobsSummary = this.props.filteredJobs.map((job) => {
-      return (
+      const jobs = job.dueDate.replaceAll("T00:00:00.000Z", "")
+      return( 
         <ContainerCard>
-        <CardStyle key={job.id}> 
-          <p> {job.title.split("#@*")[0]} </p> {/* categoria */}
-          <ImageCard src={job.title.split("#@*")[2]} />
-          <p>{job.title.split("#@*")[1]} </p> 
-          <p> R$ {job.price}</p>
-        </CardStyle>
-        <CardInformarion>
-          <p> {job.description}</p>
-          <p> Métodos de pagamento: </p>
-          <p>{job.paymentMethods[0]} {job.paymentMethods[1]} {job.paymentMethods[2]} {job.paymentMethods[3]} {job.paymentMethods[4]} </p>
-          <button onClick={()=>this.addShoppingCart(job)}> CONTRATAR</button>
-        </CardInformarion>
-      </ContainerCard>
-    )
-  })
+          <CardStyle key={job.id}> 
+            <p> {job.title.split("#@*")[0]} </p> 
+            <ImageCard src={job.title.split("#@*")[2]} />
+            <p>{job.title.split("#@*")[1]} </p> 
+            <p> R$ {job.price}</p>
+            <p> {jobs.split("-")[2]}/{jobs.split("-")[1]}/{jobs.split("-")[0]} </p> 
+          </CardStyle>
+          <CardInformarion>
+            <p> {job.description}</p>
+            <p> Métodos de pagamento: </p>
+            <p>{job.paymentMethods[0]} {job.paymentMethods[1]} {job.paymentMethods[2]} {job.paymentMethods[3]} {job.paymentMethods[4]} </p>
+            <button onClick={()=>this.addShoppingCart(job)}> CONTRATAR</button>
+          </CardInformarion>
+        </ContainerCard>
+      )
+    })
 
     return (<>
     <div>
