@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    /* background-color: green; */
-    height: 90%;
     width: 90%;
+    height: 90%;
     margin: auto;
     /* align-items: center; */
     text-align: center;
@@ -17,7 +16,7 @@ export const CategoryContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   height: auto;
 `
 
