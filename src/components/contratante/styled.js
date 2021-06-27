@@ -1,15 +1,14 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    width: 90%;
-    height: 90%;
-    margin: auto;
-    /* align-items: center; */
-    text-align: center;
-    align-content: center;
     flex-grow: 1;
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    margin: auto;
 `
 
 export const CategoryContainer = styled.div`
@@ -23,4 +22,5 @@ export const CategoryContainer = styled.div`
 export const BodyContainer = styled.div`
     display: flex;
     flex-direction: column;
+    width: 100%;
 `
