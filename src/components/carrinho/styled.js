@@ -5,7 +5,8 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: fit-content; //--------------------------------no final alterar
+    width: 20%;
+    max-width: fit-content;
     height:100%;
     padding: 0 2%;
     margin-top: 2%;
@@ -131,16 +132,37 @@ export const ShoppingCartTotal = styled.div`
 export const ContainerPO = styled.div`
     display: flex;
     flex-direction: column;
-    background-color: aqua;
+    margin: 2% 0;
+    border-top: 1px solid #EBEBF2;
         h2{
             margin-bottom: 1%;
             font-variant: small-caps;
             font-weight: 300;
             text-align: center;
         }
-        p{
+        #notice{
             margin-top: 1%;
             font-size: x-small;
+            text-align: justify;
+            text-justify: auto;
+            hyphens: auto;
         }
+`
 
+export const OrderedItemCard = styled.li`
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 2%;
+    margin-top: 2%;
+    border-bottom: 1px solid #B7ADD9;
+    p{
+        margin: 0;
+        font-size: xx-small;
+        text-align: left;
+        text-justify: auto;
+        hyphens: auto;
+    }
 `

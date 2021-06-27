@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Container, ContainerShoppingCart, ShoppingCartItemCard, ShoppingCartTotal, ContainerPO } from './styled'
+import { Container, ContainerShoppingCart, ShoppingCartItemCard, ShoppingCartTotal, ContainerPO, OrderedItemCard } from './styled'
 import { baseUrl, headers } from "../config/config";
 import IconButton from '@material-ui/core/IconButton';
 import RemoveShoppingCartIcon from '@material-ui/icons/RemoveShoppingCart';
 import { Button } from '@material-ui/core';
+import BlockIcon from '@material-ui/icons/Block';
 
 export class Carrinho extends Component {
 
@@ -134,36 +135,51 @@ fddb7090-4405-4c80-ae68-560675386234
               .toLocaleString('pt-br')}</p>
         </ShoppingCartTotal>
         <Button className={"button-hire"}
-          onClick={() => {this.onClickToHire();
+          onClick={() => {
+            this.onClickToHire();
             this.props.onClickToHire()
           }}>Contratar</Button>
       </ContainerShoppingCart >
       :
-    <p>carrinho vazio</p>
+      <p>carrinho vazio</p>
 
-    const orderedJobs = this.state.hiredJobs.map((item, index) => {
-      return <li key={item.id}>
-        <p>Pedido #00{index + 1}</p>
-        <p>Serviço:{item.title.split("#@*")[1]}</p>
-        <button
-          onClick={() => this.updateJobTakenFalse(item.id)}
-        >cancelar</button>
+    const orderedJobs = this.state.hiredJobs.length>0 ?
+    this.state.hiredJobs.map((item, index) => {
+      return <OrderedItemCard key={item.id}>
+        <div id={"container-info-ordered"}>
+          <p id={"order"}>Pedido #00{index + 1}</p>
+          <p id={"category"}>{item.title.split("#@*")[0]}</p>
+          <p id={"service"}>{item.title.split("#@*")[1]}</p>
+          <p id={"dueDate"}>Validade: {item.dueDate
+            .replaceAll("T00:00:00.000Z", "")
+            .split("-")
+            .reverse()
+            .join("-")}
+          </p>
+        </div>
+        <IconButton
+          onClick={() => this.updateJobTakenFalse(item.id)}>
+          <BlockIcon />
+        </IconButton>
 
 
-      </li>
-    })
+      </OrderedItemCard>
+    }) : <OrderedItemCard>
+      <p>-não há serviços contratados no momento</p>
+      </OrderedItemCard>
 
     return (
 
       <Container>
         <h2 id={"shopping-cart-title"}>Carrinho</h2>
         {shoppingCart}
-        
+
         <hr />
 
         <ContainerPO>
           <h2>Contratações</h2>
-          <p>aqui você poderá ver seus pedidos em andamento, podendo cancelar caso necessário</p>
+          <p id={"notice"} lang={"pt-br"}>
+            aqui você poderá ver seus pedidos em andamento, podendo cancelar caso necessário.</p>
           {orderedJobs}
         </ContainerPO>
 
