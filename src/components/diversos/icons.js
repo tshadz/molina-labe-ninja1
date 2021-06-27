@@ -6,18 +6,32 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items:center;
-    height: auto;
     width: 100px;
+    height: auto;
+    margin-top: 1%;
     i {
         font-size: 40px;
-        margin: 5px;
+        margin-bottom: -5%;
         cursor:pointer;
+        filter: invert(22%)
+                sepia(20%)
+                saturate(6%)
+                hue-rotate(321deg)
+                brightness(97%)
+                contrast(90%);
+        
     }
     p {
         margin: 0;
+        font-size: x-small;
     }
     :hover{
-        opacity: 0.7;
+        filter: invert(43%)
+                sepia(26%)
+                saturate(1183%)
+                hue-rotate(212deg)
+                brightness(92%)
+                contrast(85%);
     }
     
 `
