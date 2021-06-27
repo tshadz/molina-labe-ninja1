@@ -6,9 +6,9 @@ export const Container = styled.div`
     align-items: center;
     justify-content: flex-start;
     max-width: 20%;
-    height:100%;
+    min-height: 20%;
+    min-height:100%;
     padding: 0 2%;
-    margin-top: 2%;
     background-color: #9F8FD9;
 
     #shopping-cart-title{

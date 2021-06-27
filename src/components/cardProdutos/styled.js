@@ -1,22 +1,24 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+    flex-grow: 1;
     display: flex;
     align-items: center;
     text-align: center;
     align-content: center;
     justify-content: center;
+    width: 100%;
 
     
     
 `
 export const CardContainer = styled.div`
-   /* background-color: blue; */
+    flex-grow: 1;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 55px;
-    
+    width: 100%;
+    height: 100%;   
     
 `
 
@@ -177,4 +179,19 @@ export const ContainerSemProduto = styled.div`
     margin-left: 15px;
     margin-right: 15px;
 
+`
+export const ContainerCardsAndShoppingCart = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    margin-top: 2%;
+`
+
+export const ContainerServices = styled.div`
+    display: flex;
+    width: 100%;
+    align-items:center;
+    justify-content: center;
 `

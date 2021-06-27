@@ -44,6 +44,3 @@ export const InputContainer = styled.label`
     font-size: large;
   }
 `
-// export const Icon = styled.div`
-//   color: black;
-// `
