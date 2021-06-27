@@ -12,6 +12,9 @@ export const Button1 = styled.button`
     margin: 30px;
     border-radius: 5px;
     cursor: pointer;
+        :hover{
+            transform: scale(0.98);
+        }
 `
 
 export const Input1 = styled.input`
