@@ -49,7 +49,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [ ] Integração com API para cadastro de contratantes e prestadores (ninjas)
 
 <h2 id="link">:link: Link Surge - link para visualização do site</h2>
-:::::::::::::: Inserir link surge ::::::::::::::
+[Labeninjas](http://labeninjas-molina1.surge.sh/)
 
 <h2 id="imagens">:computer: Imagens Desktop</h2>
 
