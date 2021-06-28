@@ -24,6 +24,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 * React
 * API
 * Styled-components
+* Material UI
 * Metodologias Ágeis
 * Scrum
 * Kanban estruturado no Trello
@@ -48,9 +49,10 @@ As seguintes ferramentas foram usadas na construção do projeto:
 <h2 id="pendente">:construction: Em desenvolvimento</h2>
 
 - [ ] Integração com API para cadastro de contratantes e prestadores (ninjas)
+- [ ] Melhorias na responsividade do site em resoluções intermediárias
 
 <h2 id="link">:link: Link Surge - link para visualização do site</h2>
- <a href="http://labeninjas-molina1.surge.sh/">Labeninjas</a>
+ <a href="http://molina-labeninjas1.surge.sh//">Labeninjas</a>
 
 <h2 id="imagens">:computer: Imagens Desktop</h2>
 
