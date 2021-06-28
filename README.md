@@ -36,29 +36,30 @@ As seguintes ferramentas foram usadas na construção do projeto:
 * Ordenação de serviços por preço, data e nome
 * Adição de produtos ao carrinho e finalização da contratação do serviço
 * Exibição dos pedidos realizados e possibilidade de cancelamento da contratação
-* Adição de serviços pelo prestador
+* Adição de serviços pelo prestador com funcionalidade extra para adionar **Categoria e Imagem**
 * Visualização dos serviços disponilibilizados pelo prestador
+* Retirada do anúncio do serviço pelo prestador
 
 <h2 id="nao-funciona">:x: O que não funciona</h2>
 
-* Adicionar itens que não funcionam
-
+* Login
+* Cadastro de fornecedores
  
 <h2 id="pendente">:construction: Em desenvolvimento</h2>
 
 - [ ] Integração com API para cadastro de contratantes e prestadores (ninjas)
 
 <h2 id="link">:link: Link Surge - link para visualização do site</h2>
-[Labeninjas](http://labeninjas-molina1.surge.sh/)
+ <a href="http://labeninjas-molina1.surge.sh/">Labeninjas</a>
 
 <h2 id="imagens">:computer: Imagens Desktop</h2>
 
 - **Página inicial**
+<img src="https://github.com/future4code/molina-labe-ninja1/blob/451ac6f9a803959e7fcc20cc53110ede37dd4daf/documents/site_img_overview/04_labeninjas-nav.gif" alt="Navegação Animada" width="500"/>
 
-<h2>:iphone: Imagens Mobile</h2>
+para mais imagens do site, poderá ser acessado o diretório de [imagens](https://github.com/future4code/molina-labe-ninja1/tree/451ac6f9a803959e7fcc20cc53110ede37dd4daf/documents/site_img_overview)
 
-- **Página Inicial**<hr></hr>
-
+[comment]: <> (<h2>:iphone: Imagens Mobile</h2> - **Página Inicial**<hr></hr>)
 
 <h2 id="requisitos">:leftwards_arrow_with_hook: Pré-requisitos</h2>
 
@@ -93,8 +94,10 @@ $ npm run start
 :arrow_up: atualização 
 :beetle: correção de bug
 
+- A Documentação do projeto poderá ser acessada neste [link](https://github.com/future4code/molina-labe-ninja1/blob/451ac6f9a803959e7fcc20cc53110ede37dd4daf/documents/documentacao.md) e o diretório neste [link](https://github.com/future4code/molina-labe-ninja1/tree/451ac6f9a803959e7fcc20cc53110ede37dd4daf/documents)
+- Uma breve apresentação da evolução do projeto pode ser vista: [pagina home](https://github.com/future4code/molina-labe-ninja1/blob/451ac6f9a803959e7fcc20cc53110ede37dd4daf/documents/visual-follow-up_steps/01_home/04_animation_steps.gif) | [pagina contratante](https://github.com/future4code/molina-labe-ninja1/blob/451ac6f9a803959e7fcc20cc53110ede37dd4daf/documents/visual-follow-up_steps/02_customer/04_animation_steps.gif) | [página prestador](https://github.com/future4code/molina-labe-ninja1/blob/451ac6f9a803959e7fcc20cc53110ede37dd4daf/documents/visual-follow-up_steps/03_provider/04_animation_steps.gif)
 - Kanban atualizado (Backlog / To do / In progress / Done)
-::::::::: Inserir link trello ou print :::::::::
+<img src="https://github.com/future4code/molina-labe-ninja1/blob/451ac6f9a803959e7fcc20cc53110ede37dd4daf/documents/visual-follow-up_steps/Labeninjas_kanban_Trello.png" alt="Home" width="500"/>>
 
 <h2 id="desenvolvedores">:construction_worker: Desenvolvedores</h2>
 
