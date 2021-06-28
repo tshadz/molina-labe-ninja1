@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ContainerSemProduto, CardContainer, ImageCard, CardStyle, CardInformarion, ContainerCard } from './styled'
+import { ContainerSemProduto, CardContainer, ImageCard, CardStyle, CardInformarion, ContainerCard, ContainerCardsAndShoppingCart, ContainerServices } from './styled'
 import { Carrinho } from '../carrinho/Carrinho'
 import Button from '../diversos/Button'
 
@@ -71,20 +71,20 @@ export class Card extends Component {
       )
     })
 
-    return (<>
-      <div>
+    return (<ContainerCardsAndShoppingCart>
+      <ContainerServices>
         {jobsSummary.length === 0 ?
           <ContainerSemProduto>
             <p> Nenhum produto encontrado </p>
           </ContainerSemProduto>
           : <CardContainer>{jobsSummary} </CardContainer>}
-      </div>
+      </ContainerServices>
       <Carrinho
         shoppingCart={this.state.shoppingCart}
         deleteItemFromCart={this.deleteFromShoppingCart}
         onClickToHire={this.onClickToHire}
       />
-    </>
+    </ContainerCardsAndShoppingCart>
     )
   }
 }
