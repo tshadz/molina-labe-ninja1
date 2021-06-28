@@ -19,12 +19,11 @@ const Container = styled.div`
                 hue-rotate(321deg)
                 brightness(97%)
                 contrast(90%);
-        
-    }
+    };
     p {
         margin: 0;
         font-size: x-small;
-    }
+    };
     :hover{
         filter: invert(43%)
                 sepia(26%)
@@ -32,8 +31,7 @@ const Container = styled.div`
                 hue-rotate(212deg)
                 brightness(92%)
                 contrast(85%);
-    }
-    
+    };
 `
 const Icon = (props) =>{
     return (

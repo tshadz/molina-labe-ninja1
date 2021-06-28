@@ -189,6 +189,7 @@ export const ContainerCardsAndShoppingCart = styled.div`
     margin-top: 2%;
     @media (max-width: 400px){
         flex-direction: column;
+        align-items: center;
     }
 `
 

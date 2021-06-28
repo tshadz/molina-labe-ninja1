@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,7 +31,11 @@ export const Container = styled.div`
       }
     };
     @media (max-width: 500px){
-      width: 100vw;
+      max-width:none;
+      width: auto;
+      justify-content: center;
+      align-items: center;
+      margin: 10px;
     }
 `
 

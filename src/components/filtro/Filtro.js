@@ -49,11 +49,7 @@ export class Filtro extends Component {
             onChange={this.props.handleFieldChange}
           />
         </InputContainer>
-        {/* <Icon 
-                  text = {"limpar"}
-                  icon = {<FcClearFilters/>}
-                  onClick={this.props.clearFilters}
-                /> */}
+       
         <Button 
           startIcon={<FcClearFilters />}
           onClick={this.props.clearFilters}>

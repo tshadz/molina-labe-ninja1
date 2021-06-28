@@ -11,6 +11,7 @@ export const Container = styled.div`
     margin: auto;
     @media (max-width: 400px){
       flex-direction: column;
+      align-items: center;
     }
 `
 
@@ -20,6 +21,7 @@ export const CategoryContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   height: auto;
+  
 `
 
 export const BodyContainer = styled.div`

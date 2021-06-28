@@ -16,10 +16,9 @@ export const Container = styled.div`
         font-weight: 300;
     }
     @media (max-width: 500px){
-      max-width: 100vw;
+      max-width: 280px;
       padding: 10px;
-      margin: 10px;
-
+      margin: 20px;
     }
 `
 export const ContainerShoppingCart = styled.div`
