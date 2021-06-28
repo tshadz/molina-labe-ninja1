@@ -12,12 +12,7 @@ export class Carrinho extends Component {
   state = {
     hiredJobs: []
   }
-  /*
-78861c36-8d66-492a-910a-deb899d4aa59
-ebad5d98-1d40-4e3b-927e-423ef4be527c
-fddb7090-4405-4c80-ae68-560675386234
-  */
-
+ 
   componentDidMount() {
     this.getAllJobs()
   }
@@ -91,8 +86,6 @@ fddb7090-4405-4c80-ae68-560675386234
   }
 
   render() {
-    console.log(this.state.hiredJobs)
-
     const shoppingCartItem = this.props.shoppingCart.map((item) => {
       return <ShoppingCartItemCard key={item.id}>
 

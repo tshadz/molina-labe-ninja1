@@ -27,7 +27,7 @@ export class Main extends Component {
         })
       })
       .catch((error)=>{
-        console.log(error)
+        alert(`Erro ao solicitar a lista de serviços.\nTente novamente.\n${error}`)
       })
       
     }

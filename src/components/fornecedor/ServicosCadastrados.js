@@ -44,14 +44,11 @@ export class ServicosCadastrados extends React.Component{
         let newJobs = this.state.jobs
         newJobs.forEach((job) => {
             const newDate = job.dueDate.split("T")
-            console.log("nova data", newDate)
             const ano = newDate[0].split("-")[0]
             const mes = newDate[0].split("-")[1]
             const dia = newDate[0].split("-")[2]
-
             const newDueDate = `${dia} / ${mes} / ${ano}`
             job.dueDate = newDueDate
-            console.log("DueDate:", newDueDate)
         })
         this.setState({jobs: newJobs})
         
