@@ -10,6 +10,19 @@ export class Card extends Component {
     shoppingCart: [],
   }
 
+  componentDidMount() {
+    const localShoppingCart = localStorage.getItem('shoppingCart') 
+    const arrayService = JSON.parse(localShoppingCart)
+    if(arrayService) {
+      this.setState({shoppingCart: arrayService})
+    }
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem('listaProdutos', JSON.stringify(this.state.listaProdutosCarrinho))
+    this.props.getAllJobs()
+  }
+
   addShoppingCart = (job) => {
     const newItem = this.state.shoppingCart.find((item) => job.id === item.id)
     if (newItem) {

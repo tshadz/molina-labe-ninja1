@@ -97,6 +97,7 @@ export class Contratante extends Component {
           />
           <Card
             filteredJobs = {filteredJobs}
+            getAllJobs={this.props.getAllJobs}
           />
         </Container>
       </BodyContainer>
