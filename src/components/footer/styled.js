@@ -13,14 +13,22 @@ export const Container = styled.div`
     .footer-container-top{
         width: 100%;
         display:grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(2,1fr);
         justify-items: center;
+        @media (max-width: 500px){
+            display:flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+        }
         .footer-container-top-whoweare{
             display: flex;
             align-items: center;
             justify-content: center;
-
         }
+    }
+    @media (max-width: 500px){
+        width: 100vw;
     }
 
 `
@@ -31,7 +39,6 @@ export const RedesSociais = styled.div`
     justify-content: right;
     text-align: center;
     align-items: center;
-    /* margin-right: 50px; */
         h3{
             margin-bottom: 2%;
         }
