@@ -12,9 +12,11 @@ export class Header extends Component {
         <div>
             <Container>
               <Logo>
-                <a href="#">
-                  <IMGLogo src={labeninjas1}></IMGLogo>  
-                </a>
+                  <IMGLogo 
+                    src={labeninjas1}
+                    onClick={this.props.goToHome}
+                    >
+                  </IMGLogo>  
               </Logo>
               <ButtonContainer>
                 <ButtonGroup variant="text" color="primary" aria-label="text primary button group">

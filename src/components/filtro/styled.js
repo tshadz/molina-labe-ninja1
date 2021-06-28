@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import IconButton from '@material-ui/core/IconButton';
 
 export const Container = styled.div`
     display: flex;
@@ -29,6 +28,9 @@ export const Container = styled.div`
         background-color: #7763BF;
         color: #EBEBF2;
       }
+    };
+    @media (max-width: 500px){
+      width: 100vw;
     }
 `
 
