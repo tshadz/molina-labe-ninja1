@@ -7,7 +7,7 @@ export const Container = styled.div`
     align-items: center;
     width: 10%;
     max-width: fit-content;
-    height: 100%;
+    min-height: 100%;
     padding: 2% 2%;
     margin-top: 2%;
     background-color: #9F8FD9;
