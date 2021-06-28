@@ -16,11 +16,11 @@ export class Footer extends Component {
             </WhoWeAre>
             </div>
 
-            <AditionalServices>
+            {/* <AditionalServices>
               <p>Imprensa</p>
               <p>Termos de Uso</p>
               <p>Quem Somos</p>
-            </AditionalServices>
+            </AditionalServices> */}
 
             <RedesSociais>
               <h3>Nos siga nas redes sociais</h3>

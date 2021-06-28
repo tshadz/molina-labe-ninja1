@@ -8,6 +8,7 @@ export const Container = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
 `
 
 export const ContainerHero = styled.div`
@@ -72,7 +73,10 @@ export const CardsSteps = styled.div`
         }
     @media (max-device-width: 900px) {
         flex-direction: column;
-    }        
+    };
+    @media (max-device-width: 500px) {
+        width: 30%;
+    }          
 }
 .CardsProvider{
     width: 100%;
@@ -88,7 +92,10 @@ export const CardsSteps = styled.div`
         }
     @media (max-device-width: 900px) {
         flex-direction: column;
-    }        
+    };
+    @media (max-device-width: 500px) {
+       width: 30%;
+    }           
 }
 .CardShakeHands{
     display: flex;
@@ -111,7 +118,7 @@ export const CardsSteps = styled.div`
         color: #7763BF;
         margin: 0%;
         text-align: center;
-    }
+    };
     p{
         max-width: 100%;
         color: #404040;
@@ -119,7 +126,12 @@ export const CardsSteps = styled.div`
         text-align: center;
         white-space: normal;
         margin: 0% 0 2% 0;
-    }
+    };
+    @media (max-width: 500px){
+        min-width: 50px;
+        min-height: 100px;
+        z-index: 10;
+    };
 }
 
 `
@@ -136,8 +148,6 @@ export const ContainerHowToUseCard = styled.div`
     margin: 1vh 0;
     text-align: center;
     background-color: #EBEBF2;
-  
-
     h3{
         font-size: 4em;
         font-weight:900;
@@ -146,16 +156,26 @@ export const ContainerHowToUseCard = styled.div`
         text-align: left;
         padding-top: 5%;
         padding-left: 5%;
+        @media (max-width: 500px) {
+            font-size: 3em;
+            padding-left: 0%;
+        }
     }
     p{
-        max-width: fit-content;
-        color: #404040;
-        font-weight: bold;
-        text-align: center;
-        white-space: normal;
-        margin-right: 5%;
-        padding: 0 5%;
+            max-width: fit-content;
+            color: #404040;
+            font-weight: bold;
+            text-align: center;
+            white-space: normal;
+            margin-right: 5%;
+            padding: 0 5%;
     }
+    @media (max-width: 500px){
+        min-width: 0;
+        min-height:0;
+        width: 130px;
+        height: auto;
+    };
 `
 
 export const ContainerTestimonials = styled.div`
@@ -253,7 +273,10 @@ export const ContainerChamadaContratante = styled.div`
     border: 1px solid #B7ADD9;
     justify-content: space-between;
     align-items: center;
-    
+    @media (max-width: 500px){
+        width: 100vw;
+        margin: 0;
+    }
 
     
 `
@@ -299,7 +322,10 @@ export const ImageNinja = styled.img`
     &:hover{
         opacity: 55%; 
     }
-    
+    @media (max-width: 500px){
+        margin:0;
+        width: 100px;
+    }
 
 `
 
@@ -307,7 +333,6 @@ export const ContainerNinja = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-   
     .containerDescicao{
         opacity: 0%;
     }
@@ -315,6 +340,10 @@ export const ContainerNinja = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+        @media (max-width:500px){
+            display: flex;
+            flex-direction: column;
+        }
         
             :hover{
             .containerDescicao{
@@ -326,9 +355,11 @@ export const ContainerNinja = styled.div`
                 border: 3px solid #B7ADD9;
                 width: 100%;
                 height: 100%; 
-               
                 opacity: 100%;
-               
+                @media (max-width:500px){
+                    margin:0;
+                    border: 0px;
+                }
             }}
         
             

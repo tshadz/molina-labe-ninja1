@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import IconButton from '@material-ui/core/IconButton';
 
 export const Container = styled.div`
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,6 +29,13 @@ export const Container = styled.div`
         background-color: #7763BF;
         color: #EBEBF2;
       }
+    };
+    @media (max-width: 500px){
+      max-width:none;
+      width: auto;
+      justify-content: center;
+      align-items: center;
+      margin: 10px;
     }
 `
 

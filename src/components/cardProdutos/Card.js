@@ -45,7 +45,6 @@ export class Card extends Component {
             <p id={"category"}> {job.title.split("#@*")[0]} </p>
             <ImageCard
               style={{ backgroundImage: "url(" + job.title.split("#@*")[2] + ")" }}
-            // src={job.title.split("#@*")[2]}
             />
             <div className={"container-title"}>
               <p lang={"pt-br"}>{job.title.split("#@*")[1]} </p>
@@ -63,7 +62,6 @@ export class Card extends Component {
                 return <li>{item}</li>
               })}
             </div>
-            {/* <p>{job.paymentMethods[0]} {job.paymentMethods[1]} {job.paymentMethods[2]} {job.paymentMethods[3]} {job.paymentMethods[4]} </p> */}
             <Button
               onClick={() => this.addShoppingCart(job)} text={"CONTRATAR"} />
           </CardInformarion>

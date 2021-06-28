@@ -27,7 +27,6 @@ export class CadastrarServico extends React.Component{
 
     handleFieldChange = event => {     
         this.setState({[event.target.name]:event.target.value})  
-        // console.log(event.target.value)
     }
 
     onChangeCategory = (event) => {
@@ -45,7 +44,6 @@ export class CadastrarServico extends React.Component{
     onChangeTime = (event) => {
         const newTime = this.formataData(event.target.value)
         this.setState({inputTime: newTime})
-        console.log("aqui esta o new time", newTime)
     }
 
     onClickHandelChecks = (method,index) => {
@@ -60,14 +58,11 @@ export class CadastrarServico extends React.Component{
     }
 
     onClickCheckFilling = () => {
-        console.log("função Verifica se esta tudo preenchido")
         const paymentsMethods = this.state.paymentsMethods.filter((method) => {
             return method.isChecked === true
         }).map((method) => {
             return method.name
         })
-
-        console.log("metodos de pagamento", paymentsMethods)
 
         this.state.inputCategory !== "Selecione" && this.state.inputTitle!== "" &&
         this.state.inputURLImage !== "" && this.state.inputDescription !== "" && this.state.inputRemuneration !== "" &&
@@ -87,7 +82,6 @@ export class CadastrarServico extends React.Component{
             dueDate: this.state.inputTime
         }
 
-        console.log("body", body)
         axios.post(baseUrl+"jobs",body,headers)
         .then((response) => {
             alert(response.data.message)
@@ -129,7 +123,6 @@ export class CadastrarServico extends React.Component{
         return(
             <div>
                 <h2>Anuncie Seu Trabalho Conosco</h2>
-                {/* <form> */}
                     <ItensCadastroAnuncio>
                     <p>Categoria</p>
                         <select name='inputCategory' onChange={this.handleFieldChange} required>
@@ -164,7 +157,6 @@ export class CadastrarServico extends React.Component{
                         <Button type= "submit" text="Enviar" onClick={this.onClickCheckFilling}/>
                         <Button onClick={this.props.goToProviderHome} text="Voltar"/>
                     </ItensCadastroAnuncio>
-                {/* </form> */}
             </div>
         )
     }

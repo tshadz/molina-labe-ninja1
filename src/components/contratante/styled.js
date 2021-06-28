@@ -9,6 +9,10 @@ export const Container = styled.div`
     width: 100%;
     height: 100%;
     margin: auto;
+    @media (max-width: 400px){
+      flex-direction: column;
+      align-items: center;
+    }
 `
 
 export const CategoryContainer = styled.div`
@@ -17,10 +21,13 @@ export const CategoryContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   height: auto;
+  
 `
 
 export const BodyContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+    align-items: center;
+    align-content: center;
 `
