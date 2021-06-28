@@ -158,7 +158,7 @@ export default class LandingPage extends React.Component {
             </ContainerHowToUse>
 
             <ContainerTestimonials>
-                <h2>a experiência de quem já usou o Labeninjas</h2>
+                <h2>A experiência de quem já usou o Labeninjas</h2>
                 <ContainerCards>
                     {testimunials[0]}
                     {testimunials[1]}
